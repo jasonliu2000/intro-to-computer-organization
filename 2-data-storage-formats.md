@@ -198,3 +198,20 @@ See `2/dec_to_hex.c`
 
 **2.18**
 The program prints -1 instead of 4294967295. This is because `%i` is the conversion specifier for a signed integer.
+
+**2.19**
+`an_int` is stored at address `0x7ffffffff19c`. This variable is an integer with hexadecimal value "123f" (`0x0000123f`), with:
+- address `0x7ffffffff19c` storing `0x3f`
+- address `0x7ffffffff19d` storing `0x12`
+- address `0x7ffffffff19e` storing `0x00`
+- address `0x7ffffffff19f` storing `0x00`
+
+Note that this integer also takes up 4 bytes on our system, which is standard. Also, this is in little endian order, since this integer is stored in memory from least -> most significant bits.
+
+`a_string` is stored starting at address `0x7ffffffff190`, which each character taking a byte:
+- address `0x7ffffffff190` stores `0x31`. This hexadecimal value corresponds to 49 in decimal format. In the ASCII table, 49 is coded as "1"
+- address `0x7ffffffff191` stores `0x32`. This hexadecimal value corresponds to 50 in decimal format. In the ASCII table, 50 is coded as "2"
+- address `0x7ffffffff192` stores `0x33`. This hexadecimal value corresponds to 51 in decimal format. In the ASCII table, 51 is coded as "3"
+- address `0x7ffffffff193` stores `0x66`. This hexadecimal value corresponds to 102 in decimal format. In the ASCII table, 102 is coded as "f"
+
+The remaining 6 bytes from address `0x7ffffffff194` to `0x7ffffffff199` are garbage values yet are part of the string because it was initialized to hold 10 characters.
