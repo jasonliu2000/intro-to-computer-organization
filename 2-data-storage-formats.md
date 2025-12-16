@@ -172,3 +172,29 @@ h) abcd
 ```
 43981 = 1010 1011 1100 1101 = 0xabcd
 ```
+
+**2.11**
+A, A-, ..., D-, F are 12 different letter grades that can be represented with 4 bits:
+| Letter Grade | Bit Representation |
+| --- | --- |
+| A | 0001 |
+| A- | 0010 |
+| B+ | 0011 |
+| B | 0100 |
+| B- | 0101 |
+| C+ | 0110 |
+| C | 0111 |
+| C- | 1000 |
+| D+ | 1001 |
+| D | 1010 |
+| D- | 1011 |
+| F | 1100 |
+
+**2.16**
+See `2/hex_to_dec.c`
+
+**2.17**
+See `2/dec_to_hex.c`
+
+**2.18**
+The program prints -1 instead of 4294967295. This is because `%i` is the conversion specifier for a signed integer.
